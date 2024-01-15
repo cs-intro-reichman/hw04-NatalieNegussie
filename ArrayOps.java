@@ -9,7 +9,7 @@ public class ArrayOps {
 			return 1;
 		int j=0, count=0;
 		while(j<=size){
-			for(int i=0; i<=size; i++){
+			for(int i=0; i<size; i++){
 				if(array[i]==j){
 					count++;
 				}
