@@ -30,10 +30,13 @@ public class StringOps {
         int size = string.length();
 		for(int i=0; i<size; i++){
 			if((string.charAt(i) == 'a')||(string.charAt(i) == 'e')||(string.charAt(i) == 'o')||(string.charAt(i) == 'u')||(string.charAt(i) == 'i')){
-					newStr = newStr + (string.charAt(i) - 32);
+					newStr = newStr + (char) (string.charAt(i) - 32);
+			}
+			else if((string.charAt(i) == 'A')||(string.charAt(i) == 'E')||(string.charAt(i) == 'O')||(string.charAt(i) == 'U')||(string.charAt(i) == 'I')){
+					newStr = newStr + (string.charAt(i));
 			}
 			else if ((string.charAt(i)>= 65)&&(string.charAt(i)<= 90)){
-				newStr = newStr + (string.charAt(i) + 32);	
+				newStr = newStr + (char) (string.charAt(i) + 32);	
 			}
 			else if (string.charAt(i)>= ' '){
 				newStr = newStr + (string.charAt(i));
