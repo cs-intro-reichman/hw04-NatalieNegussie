@@ -46,12 +46,34 @@ public class StringOps {
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
+        String newStr = "";
+		if(string.charAt(0)<=90&&string.charAt(0)>=65){
+			newStr = (char)(string.charAt(0)-32);
+		}
+		for(int i=0; i<string.length();i++){
+		if(string.charAt(i) == " "){
+			while(string.charAt(i) == " "){
+			newStr = newStr;
+			// להמשיך
+		}	
         return "";
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+		int j = 0, count=0;
+		int size = string.length();
+		for(int i=0; i<size; i++){
+			if(string.charAt(i) == chr){
+				count++;
+			}	
+		}
+		int [] arr = new int [count];
+		for(int k=0; k<size; k++){
+			if(string.charAt(k) == chr){
+				arr[j] = k;
+				j++;
+			}	
+		}	
+        return arr;
     }
 }
