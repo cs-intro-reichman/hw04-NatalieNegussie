@@ -51,8 +51,7 @@ public class StringOps {
 		if(string.charAt(0)<=90&&string.charAt(0)>=65){
 			newStr = newStr+(char)(string.charAt(0)+32);
 		}
-		for(int i=0; i<size;i++){
-			
+		for(int i=1; i<size;i++){
 			if(string.charAt(i) == ' '){
 				newStr = newStr;
 				while((i<=(size-2))&&(string.charAt(i) == ' ')){
@@ -67,9 +66,8 @@ public class StringOps {
 						newStr = newStr + (char)(string.charAt(i)-32);	
 					}	
 				}	
-			
 			}
-			if(string.charAt(i)<=90&&string.charAt(i)>=65){
+			else if(string.charAt(i)<=90&&string.charAt(i)>=65){
 			newStr = newStr + (char)(string.charAt(i)+32);
 			}
 			else{
