@@ -26,17 +26,72 @@ public class StringOps {
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+		String newStr = "";
+        int size = string.length();
+		for(int i=0; i<size; i++){
+			if((string.charAt(i) == 'a')||(string.charAt(i) == 'e')||(string.charAt(i) == 'o')||(string.charAt(i) == 'u')||(string.charAt(i) == 'i')){
+					newStr = newStr + (char) (string.charAt(i) - 32);
+			}
+			else if((string.charAt(i) == 'A')||(string.charAt(i) == 'E')||(string.charAt(i) == 'O')||(string.charAt(i) == 'U')||(string.charAt(i) == 'I')){
+					newStr = newStr + (string.charAt(i));
+			}
+			else if ((string.charAt(i)>= 65)&&(string.charAt(i)<= 90)){
+				newStr = newStr + (char) (string.charAt(i) + 32);	
+			}
+			else if (string.charAt(i)>= ' '){
+				newStr = newStr + (string.charAt(i));
+			}	
+		}	
+        return newStr;
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        String newStr = "";
+		int size = string.length();
+		if(string.charAt(0)<=90&&string.charAt(0)>=65){
+			newStr = newStr+(char)(string.charAt(0)+32);
+		}
+		for(int i=1; i<size;i++){
+			if(string.charAt(i) == ' '){
+				newStr = newStr;
+				while((i<=(size-2))&&(string.charAt(i) == ' ')){
+					i++;
+					if(string.charAt(i) == ' '){
+						newStr = newStr;
+					}
+					else if(string.charAt(i)<=90&&string.charAt(i)>=65){
+						newStr = newStr + string.charAt(i);
+					}
+					else{
+						newStr = newStr + (char)(string.charAt(i)-32);	
+					}	
+				}	
+			}
+			else if(string.charAt(i)<=90&&string.charAt(i)>=65){
+			newStr = newStr + (char)(string.charAt(i)+32);
+			}
+			else{
+			newStr = newStr+string.charAt(i);
+			}
+		}	
+        return newStr;
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+		int j = 0, count=0;
+		int size = string.length();
+		for(int i=0; i<size; i++){
+			if(string.charAt(i) == chr){
+				count++;
+			}	
+		}
+		int [] arr = new int [count];
+		for(int k=0; k<size; k++){
+			if(string.charAt(k) == chr){
+				arr[j] = k;
+				j++;
+			}	
+		}	
+        return arr;
     }
 }
